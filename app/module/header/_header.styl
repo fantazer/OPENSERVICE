@@ -2,16 +2,20 @@
 	position: absolute
 	top: 0
 	left: 0
-	background: rgba(10, 10, 10, 0.4)
+	background: rgba(10, 16, 25, 0.71)
 	width: 100%
 	height: 100%
 
 .header-logo
 	up()
-	font-size: 20px
+	f()
+	font-size: 24px
 	color white
 	text-align: left
-	
+	width: 200px
+	+below(1024px)
+		width: auto
+
 .header-phone
 	up()
 	font-size: 20px
@@ -27,9 +31,9 @@
 	background-attachment fixed
 	background-repeat: no-repeat
 	bg-full()
+	min-height 500px
 
-.main-section-cont
-	position: relative
+
 
 .main-section-title
 	up()
@@ -37,32 +41,25 @@
 	font-size: 5vw
 
 .header
-	background-color rgba(0, 0, 0, 0.25)
-	position: fixed
+	+below(768px)
+		padding: 15px 0
+	position: absolute
 	top 0
 	left: 0
 	width: 100%
 	z-index 50
-
-.header-logo
-	+below(1024px)
-		width: 100px
-	height: 40px
-	width: 15%
-	flex(mid)
-	img
-		width: 100%
+	padding: 45px 0
 
 .header-wrap
 	flex(between)
 
 .header-nav__el-link-wrap
-	+below(1024px)
+	+below(768px)
 		border-bottom:1px solid rgba(236, 236, 236, 0.09)
 	flex(between)
 
 .menu-toggle
-	+above(1024px)
+	+above(768px)
 		display: none
 	.icon-el
 		cp()
@@ -70,107 +67,103 @@
 		fill white
 
 .header-nav__el
-	+below(1200px)
-		font-size: 12px
-	+below(1024px)
+
+	+below(768px)
 		width: 100%
 		text-align: center
-		background: grey
-		font-size: 14px
-	font-size: 14px
+		background: #30343e
 	position: relative
-	.icon-el
-		size 10px
-		fill white
-		margin-left: 5px
-		tr(all)
-	&:hover
-		&>.header-nav__sub
-			opacity 1
-			visibility visible
-		.header-nav__sub
-			transform translateY(0px)
-		.icon-el
-			+above(1024px)
-				transform rotate(-180deg)
+	up()
 
 .header-nav__el-link
 	+below(1024px)
 		width: 100%
 		flex(between)
 		padding: 20px 10px
-	padding: 30px 0
+	&:hover
+		color darken(white,20)
 	display: inline-block
 	color white
 
-.header-nav__el-icon
-	+below(1024px)
-		cp()
-		flex(mid)
-		background: darken(grey,20)
-		size: 60px
-		.icon-el
-			size 15px
+
 
 .header-nav
-	+below(1024px)
+	+below(768px)
 		position: absolute
-		top: 100%
+		top: 120%
 		width: 100%
 		left: 0
 		fw()
 		display: none
-	+above(1024px)
+	+above(768px)
 		display: flex !important
-	width: 60%
-	justify-content:space-around
 
-.header-nav__sub
-	+below(1024px)
-		transform translateY(0px)
-		position: initial
+	width: 475px
+	justify-content:space-between
+	a
+		color white
+		up()
+
+
+.header-logo--red
+	color #d3363b
+
+.header-logo--blue
+	color #50b6e8
+
+.main-section-wrap
+	+below(768px)
+		fw()
+		flex(mid)
+		fl()
+	position: relative
+	f()
+
+.header-date
+	+below(768px)
+		margin-right: 0
+		size 150px
+	flex(mid)
+	fl()
+	bgi('border-date.png')
+	bg-full()
+	background-size: contain
+	width: 300px
+	height: 350px
+	margin-right: 10%
+
+.header-date-num
+	+below(768px)
+		font-size: 60px
+	color #df6976
+	font-size 190px
+	line-height: 1
+
+.header-date-text
+	+below(768px)
+		font-size:20px
+	color #df6976
+	font-size: 30px
+
+.header-slogan
+	+below(768px)
 		width: 100%
-		top: initital
-		left: initial
-		margin-left: 0px
-		border-radius 0px
-		opacity 1!important
-		visibility visible!important
-		transition initial
-		.window-coner-top
-			display: none
-	tr(all)
-	transform translateY(20px)
-	position: absolute
-	width: 180px
-	top: 100%
-	left: 50%
-	margin-left: -90px
-	border-radius 4px
-	border 1px solid #dddddd
-	background-color #ffffff
-	opacity 0
-	visibility hidden
+	margin-top: 20px
+	max-width 510px
 
-.header-nav__sub-wrap
-	position: relative
-	background: white
+.header-title
+	+below(768px)
+		font-size: 24px
+		margin-bottom: 10px
+		text-align: center
+	color white
+	font-size 52px
+	font-weight 500
+	margin-bottom: 40px
 
-.header-nav__sub--hidden
-	opacity 0
-	visibility hidden
-	height: 0
-
-.header-nav__sub-el
-	+below(1024px)
-		padding: 10px 0
-	tr(all)
-	padding: 20px
-	display: block
-	border-bottom:1px solid #f7f6f6
-	z-index 5
-	position: relative
-	&:hover
-		background: #f0f0f0
-	&:last-child
-		border-bottom: 0
+.header-text
+	+below(768px)
+		font-size: 12px
+		text-align: center
+	color white
+	line-height: 1.4

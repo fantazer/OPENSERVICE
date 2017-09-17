@@ -1,15 +1,127 @@
 include block_html/_style.pug
 include block_html/_include.pug
 
++header()
 
-.main-cont
-	h1 Список страниц
-	.all-page
-			each page in pages
-				a(href=''+page.href+'.html').all-page__el
-					img(src='img/screen/app/'+page.href+'.png', alt="")
-					.all-page__info
-						.all-page__title #{page.name}
+#event.section.section--descr
+	.descr
+		.descr-wrap
+			.descr-info
+				.descr-title Мероприятие
+				.descr-text
+					p Мы пригласили самых популярных экспертов ресторанного и IT-бизнеса России, а также порядка 50 участников, готовых развиваться и обучаться. Особое внимание планируем уделить организации системы учета в сезонном бизнесе с тем, чтобы "дожить" от сезона до сезона.
+					p Поделимся своим опытом построения успешного ресторанного бизнеса, историями успеха словами клиентов, лайфхаками и не только! Будем рады встрече с вами!
+				a(href="#order" ).descr-get.scroll-link Записаться
+			.descr-user
+				.gradient-block
+					.descr-user__head Ведущий спикер <br> мероприятия
+					.descr-user__name Наталья <br> Кулакова
+					.descr-user__text известный российский <br> бизнес-тренер и консультант в области HoReCa.
+				.gradient-block-coner
 
+#program.section.section--time
+	.main-cont
+		.time-head
+			.time-title Программа
+			.slider-control
+				.slider-control-el.slider-control-el--left
+				.slider-control-el.slider-control-el--right
+		.time.owl-carousel
+			.time-el
+				.time-val 11:00
+				.time-text Регистрация, кофе
+			.time-el
+				.time-val 11:30
+				.time-text Приветственное слово. Л. Комиссаров. Open Service
+			.time-el
+				.time-val 11:45
+				.time-text Сити-кафе для курортных городов. Н.Кулакова
+			.time-el
+				.time-val.time-val--mark 12:45
+				.time-text Перерыв
+			.time-el
+				.time-val 13:00
+				.time-text Сити-кафе для курортных городов. Н. Кулакова
+			.time-el
+				.time-val 14:00
+				.time-text Организация и ведение учёта в сезонном бизнесе. Как настроить учёт так, чтобы дожить до следующего сезона. – Л. Комиссаров
+			.time-el
+				.time-val 15:00
+				.time-text Перерыв
+
+#teacher.section.section--teacher
+	.main-cont
+		.teacher-title Ведущие
+		.teacher-el
+			.teacher-img
+				.teacher-img__el
+					img(src="img/teacher-1.png", alt="")
+				.teacher-town г. Москва
+			.teacher-content
+				.teacher-name Наталья Кулакова
+				.teacher-prof Консультант ресторанного рынка, бизнес-тренер, <br>	Владелец Школы Бизнеса для рестораторов
+				.teacher-info Истории и примеры из собственного опыта, учебные кейсы на базе реальных практик слушателей и клиентов, яркие ассоциативные примеры, позволяющие легко усвоить информацию, - Наталья выстраивает общение со слушателями и клиентами так, что они постоянно открывают для себя новые возможности повышения конкурентоспособности своего бизнеса.
+
+		.teacher-el
+			.teacher-img
+				.teacher-img__el
+					img(src="img/teacher-2.png", alt="")
+				.teacher-town г. Санкт-Петербург
+			.teacher-content
+				.teacher-name Леонид Комиссаров
+				.teacher-prof Основатель Open Service
+				.teacher-info «Занимаюсь ресторанным бизнесом более 10 лет. Глубоко убежден в том, что будущее в общении. Готов поговорить с каждым на левополушарные темы: учет, цифры, отчеты. Я это все очень люблю.»
+
+#order.section.section--form
+	.main-form
+		.form
+			.gradient-block
+				.form-title Хочу участвовать
+				form.validate-form( action="javascript:void(null);")
+					input(type="text" placeholder="Фамилия Имя Отчество*" name="name")
+					input(type="text" placeholder="Должность" name="staff")
+					input(type="text" placeholder="Наименование заведения" name="place")
+					.input-row
+						.input-row__el
+							input(type="text" placeholder="Телефон*" name="phone")
+						.input-row__el
+							input(type="text" placeholder="Email*" name="email")
+					.check
+						.check-el
+							label.style-label.style-label--checkbox
+								input(type="checkbox" name="agree").sytle-input
+								.sytle-input-element
+									+icon("checked","icon-check")
+								.sytle-input-text В полном объеме ознакомлен с
+									a(href="#") Условиями обработки <br>
+									a(href="#") персональных данных
+									|  и даю свое согласие на обработку персональных данных на указанных условиях.
+
+					.form-get-row
+						input(type="submit" value="Отправить" name="Записаться").form-get
+			.gradient-block-coner
+
+.footer-wrap
+	.footer
+		.main-cont
+			.type.type-town Open Service в Сочи:
+			.type.type-contact
+				.type-contact-el Г. Сочи, ул. Гагарина д.5.
+				a(href="tel:+7 (862) 277-71-98").type-contact-el Тел. +7 (862) 277-71-98
+				a(href="mailto:sochi@open-s.info").type-contact-el e-mail: sochi@open-s.info
+
+	.footer-sub
+		.main-cont
+			.footer-sub-cont
+				.type Основной сайт: open-s.info
+				.footer-sub-comp
+					.footer-sub-text Сделано
+					a(href="#").footer-sub-logo
+						img(src="img/logo-jq.png", alt="")
+
+.modal.modal-true
+	.modal-wrap
+		+icon("interface","icon")
+		.modal-true-text Ваша заявка принята
 
 include ./block_html/_script.pug

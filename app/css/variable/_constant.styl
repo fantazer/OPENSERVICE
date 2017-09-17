@@ -17,7 +17,7 @@ silver = #DDDDDD
 gray = #AAAAAA
 black = #111111
 
-$blue = #3a90c8
+$blue = #50b6e8
 
 $main-text-color = black
 $link-color = black
@@ -32,7 +32,7 @@ $border-color = #dddddd
 //Add fotn rub write .rub a - (a,b,c,d - change type font)
 
 //webfont('PT Sans', 'PT Sans', 'normal')
-$v-font =  'Roboto', sans-serif
+$v-font =  'DaxlinePro', sans-serif
 
 $weigh-light = 300
 $weigh-normal = 400
@@ -50,16 +50,16 @@ typeSize(fontSm,font)
 	typeSize(14,12)
 
 .type--main
-	typeSize(16,14)
+	typeSize(15,14)
 
 .type--md
 	typeSize(18,15)
 
 .type--lg
-	typeSize(26,18)
+	typeSize(28,18)
 
 .type--xl
-	typeSize(36,20)
+	typeSize(40,26)
 
 .type--bold
 	font-weight bold
@@ -81,8 +81,6 @@ a
 		color darken($link-color,20)
 	&:visiter
 		color darken($link-color,30)
-
-
 
 p
 	@extend .type--main
@@ -128,7 +126,7 @@ btnStyleLight(br-btn,color-btn)
 
 .btn
 	up()
-	br(4px)
+	br(40px)
 	tr(all)
 	display inline-block
 	background none
@@ -148,7 +146,7 @@ btnStyleLight(br-btn,color-btn)
 .btn--md
 	@extend .btn
 	font-size 15px
-	padding 20px 45px
+	padding 20px 50px
 
 .btn--lg
 	@extend .btn
@@ -255,21 +253,21 @@ button
 
 // ============================ Inputs ============================
 
-.input,.textarea,.select
+input,.textarea,.select
 	border 0px
 	padding 20px
-	border 1px solid $border-color
+	border 1px solid #b7c2c7
 	resize: none
 	outline: 0 !important
-	border-radius 4px
+	border-radius 0px
 	font-family $v-font
 	display block!important
 	margin-bottom 10px
 	placeholder(#888888)
-	background: #f7f7f8
+	background: white
 	tr(all)
 	&:focus
-		border 1px solid blue
+		border 1px solid $blue
 
 .style-label
 	display flex
@@ -292,7 +290,6 @@ button
 		margin-right 10px
 		background white
 		border 1px solid #cfcfcf
-		br(8px)
 		cp()
 		tr(all)
 		&:hover
@@ -300,7 +297,7 @@ button
 	.icon-check
 		display none
 	.sytle-input
-		&:checked + .sytle-input-element
+		&:checked ~ .sytle-input-element
 			flex(mid)
 			color white
 			.icon-check

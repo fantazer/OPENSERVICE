@@ -94,14 +94,14 @@ gulp.task('imageCompress',function(){
 //sprite SVG
 gulp.task('svg', function () {
 		 gulp.src(['!app/img/svg/**--color.*','app/img/svg/**.*','!app/img/svg/defs.svg','!app/img/svg/sprite.svg'])
-		 .pipe(cheerio({
-						run: function ($) {
-								$('[fill]').removeAttr('fill'); //remove if need color icon
-								$('[style]').removeAttr('style');
-								$('style').remove();
-						},
-						parserOptions: {xmlMode: true }
-			}))
+		 // .pipe(cheerio({
+			// 			run: function ($) {
+			// 					$('[fill]').removeAttr('fill'); //remove if need color icon
+			// 					$('[style]').removeAttr('style');
+			// 					$('style').remove();
+			// 			},
+			// 			parserOptions: {xmlMode: true }
+			// }))
 		.pipe(gulp.dest('app/img/svg/'));
 
 		var svgSrc = gulp.src(['app/img/svg/**.*','!app/img/svg/defs.svg','!app/img/svg/sprite.svg']);

@@ -3,6 +3,7 @@
 @import "variable/_ie.styl"
 @import "icon/sprite.css"
 @import "variable/_helper.styl"
+@import "variable/_fonts.styl"
 @import "variable/_default.styl"
 @import "variable/_elements.styl"
 @import "variable/_constant.styl"
@@ -29,10 +30,349 @@ body
 	@extend .type--main
 	font-family $v-font
 	color $main-text-color
-	line-height 1.2
 	letter-spacing 0.01em
-	
+	line-height: 1.2
+
 .main-cont
-	center(1200px,10px)
-	
+	center(1120px,10px)
+
+.section
+	+below(768px)
+		padding: 40px 0
+	padding: 115px 0
+
+.descr
+	center(880px,10px)
+
+.section--descr
+	border-bottom 1px solid  #d9d9d9
+//.descr
+.descr-wrap
+	+below(768px)
+		flex(mid)
+		fl()
+	f()
+	justify-content: space-between
+	align-items: flex-start
+
+.descr-info
+	+below(768px)
+		margin-bottom: 40px
+	+below(640px)
+		width: 100%
+	width: 400px
+
+.descr-title
+	@extend .type--xl
+
+.descr-text
+	+below(768px)
+		margin-bottom: 20px
+	margin-bottom: 60px
+	p
+		line-height: 1.8
+.descr-get
+	&:hover
+		color white
+	+below(768px)
+		width: 100%
+	@extend .btn--mark
+	@extend .btn--md
+
+.descr-user
+	position: relative
+	.gradient-block
+		flex(between)
+		fl()
+		width: 280px
+		padding: 40px 20px
+		text-align: center
+		height: 100%
+
+.gradient-block
+	border 4px solid transparent
+	background-color #ffffff
+	border-image: linear-gradient(-45deg, #6aa8d5 0%, #be3e4b 100%);
+	border-image-slice: 1
+	position: relative
+	z-index 5
+
+.gradient-block-coner
+	+below(768px)
+		display: none
+	position: absolute
+	width: 100%
+	height: 100%
+	border 4px solid transparent
+	border-image: linear-gradient(-45deg, #6aa8d5 0%, #be3e4b 100%);
+	border-image-slice: 1
+	top 5%
+	left 5%
+	background: white
+
+.descr-user__head
+	margin-bottom: 50px
+	line-height: 1.6
+
+.descr-user__name
+	font-size: 28px
+	line-height: 1.6
+	margin-bottom: 50px
+
+.descr-user__text
+	line-height: 1.6
+	color #625f5f
+
+.time
+	+below(768px)
+		margin-bottom: 40px
+.time-val
+	+below(768px)
+		font-size: 20px
+		margin-bottom: 20px
+	font-size: 28px
+	margin-bottom: 40px
+
+.time-text
+	line-height: 1.6
+
+.slider-control
+	f()
+	justify-content: flex-end
+
+.slider-control-el
+	size 52px
+	cp()
+
+.slider-control-el--left
+	bgi('arrow-left--color.svg')
+	bg-full()
+	margin-right: 10px
+
+.slider-control-el--right
+	bg-full()
+	bgi('arrow-right--color.svg')
+
+.section--time
+	bgi('time-line.png')
+	background-position: center bottom
+
+.time-title
+	@extend .type--xl
+
+.time-head
+	+below(768px)
+		margin-bottom: 30px
+	flex(between)
+	margin-bottom: 100px
+
+.section--teacher
+	background: #55acd8
+//.main-cont
+
+.teacher-title
+	+below(768px)
+		margin-bottom: 40px
+	@extend .type--xl
+	color white
+	margin-bottom: 70px
+
+.teacher-el
+	+below(1024px)
+		padding: 30px
+	+below(768px)
+		fw()
+		flex(mid)
+		fl()
+		padding: 30px 20px
+	f()
+	background: white
+	padding: 50px 50px 50px 85px
+	margin-bottom: 40px
+
+.teacher-img
+	+below(768px)
+		margin-right: 0px
+		margin-bottom: 20px
+	flex(mid)
+	fl()
+	margin-right: 10%
+.teacher-img__el
+	+below(768px)
+		max-width 200px
+		min-width 200px
+	margin-bottom: 20px
+	min-width 240px
+
+.teacher-town
+	color #d3363b
+//.teacher-content
+
+.teacher-name
+	+below(768px)
+		text-align: center
+	@extend .type--lg
+	margin-bottom: 20px
+
+.teacher-prof
+	+below(768px)
+		margin-bottom: 20px
+		text-align: center
+	margin-bottom: 40px
+	color #627f9a
+	line-height: 1.6
+.teacher-info
+	line-height: 1.6
+
+
+.form
+	center(710px,10px)
+	height: 100%
+	position: relative
+	.gradient-block
+		+below(768px)
+			padding: 20px
+		padding: 70px 60px
+	input
+		width: 100%
+		margin-bottom: 20px
+	.sytle-input-element
+		size 32px
+		margin-right: 20px
+	.style-label
+		+below(768px)
+			margin-top: 0
+		align-items: flex-start
+		margin-top: 40px
+
+.form-title
+	+below(768px)
+		margin-bottom: 20px
+	@extend .type--xl
+	text-align: center
+	margin-bottom: 80px
+
+.form-get
+	+below(768px)
+		width: 100%!important
+	@extend .btn--mark
+	@extend .btn--md
+	margin: 0 auto
+	width: auto!important
+.sytle-input-text
+	+below(768px)
+		font-size: 12px
+	width:calc(100% - 52px)
+	line-height:1.4
+	a
+		text-decoration: underline
+
+.type-contact
+	+below(768px)
+		flex(mid)
+		fl()
+	f()
+.type-contact-el
+	display: inline-block
+	+below(768px)
+		display: block
+		margin: 5px 0
+		text-align: center
+.check
+	+below(768px)
+		margin-bottom: 40px
+	margin-bottom: 70px
+
+.form-get-row
+	flex(mid)
+
+.input-row
+	fw()
+	f()
+	justify-content: space-between
+	.input-row__el
+		+below(768px)
+			width: 100%
+		width: 48%
+
+.footer-wrap
+	background: $blue
+	color white
+	a
+		color white
+	.type
+		display: block
+.footer
+	+below(768px)
+		padding: 20px 0
+	padding: 40px 0
+	border-bottom:1px solid #0b79b0
+	a
+		margin-left: 20px
+
+.footer-sub
+	padding: 20px 0
+
+.type-town
+	margin-bottom: 20px
+	+below(768px)
+		text-align: center
+
+.footer-sub-cont
+	+below(768px)
+		flex(mid)
+		fl()
+	flex(between)
+
+.footer-sub-comp
+	+below(768px)
+		margin-top: 10px
+	flex(between)
+
+.footer-sub-text
+	margin-right: 20px
+
+label.error
+	display: block
+	margin-bottom: 20px
+	font-size: 12px
+	color red
+
+.check-el
+	.field-error
+		position: relative
+	label.error
+		position: absolute
+		top: calc(100% + 20px)
+
+.modal
+	display none
+	background white
+	padding 30px 20px
+	br(4px)
+	position relative
+	.icon-times
+		position absolute
+		top 10px
+		right 10px
+		font-size 22px
+		cp()
+
+.modal-true
+	background green
+	padding 4%
+.modal-wrap
+	flex(mid)
+	fl()
+	fw()
+	.icon
+		fill white
+		size 80px
+		margin-bottom 20px
+.modal-true-text
+	text-align center
+	color white
+	font-size 20px
+	up()
+
 @import "../module/**/*"
