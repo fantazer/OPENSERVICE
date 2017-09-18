@@ -1,12 +1,30 @@
 (function($){
     $(window).load(function(){
         $(".scroll-link").mPageScroll2id({
-				    highlightClass:"left-nav-el-active"
+				    highlightClass:"left-nav-el-active",
+				    offset:40,
+				     onComplete:function(){
+				    	$('.header-navs').hide();
+				    }
 				});
     });
  })(jQuery);
 
 $(document).ready(function(){
+	var shrinkHeader = 250;
+	var heightHeader=$('.header').height();
+	$(window).scroll(function() {
+		var scroll = $(this).scrollTop();
+		if ( scroll >= shrinkHeader ) {
+				$('.header').addClass('shrink');
+				$('body').css('paddingTop',heightHeader);
+			}
+			else {
+					$('.header').removeClass('shrink');
+					$('body').css('paddingTop',0);
+			}
+	});
+
 	function setHeight() {
 	   var windowHeight = $(window).height(),
 	       $block = $('.main-section');
@@ -181,18 +199,16 @@ $(document).ready(function(){
 	/* ###### For SlideToggle Elements  ######*/
 	var hideToggle = function(targetClick,toggleEl) {
 		$(targetClick).click(function(event){
-				event.stopPropagation();
 				$(toggleEl).slideToggle("fast");
 		});
-		$(toggleEl).on("click", function (event) {
-			event.stopPropagation();
-		});
-		$(document).on("click", function () {
-				$(toggleEl).hide();
-		});
-	}
-	hideToggle('.menu-toggle','.header-nav');
 
+	};
+	hideToggle('.menu-toggle','.header-navs');
+
+
+	$(window).resize(function(){
+		heightHeader=$('.header').height();
+	});
 })
 
 //cash SVG

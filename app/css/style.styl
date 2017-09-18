@@ -261,7 +261,7 @@ body
 	width: auto!important
 .sytle-input-text
 	+below(768px)
-		font-size: 12px
+		font-size: 14px
 	width:calc(100% - 52px)
 	line-height:1.4
 	a
@@ -374,5 +374,51 @@ label.error
 	color white
 	font-size 20px
 	up()
+
+@-webkit-keyframes slideInDown {
+	from {
+		transform: translate3d(0, -100%, 0);
+		visibility: visible;
+	}
+
+	to {
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+//Анимация из animateCSs
+@keyframes slideInDown {
+	from {
+		transform: translate3d(0, -100%, 0);
+		visibility: visible;
+	}
+
+	to {
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+.header.shrink
+	position fixed!important
+	top 0
+	left 0
+	background white
+	width 100%
+	margin 0
+	animation:  slideInDown  1s 1 ease-in-out;
+	padding: 20px 0
+	box-shadow 0px 3px 2px #f3f3f3
+	+below(768px)
+		padding: 10px 0
+	a
+		+below(768px)
+			color white
+		color black
+	.menu-toggle
+		.icon-el
+			fill black
+.left-nav-el-active
+	font-weight:500
+	color $blue!important
 
 @import "../module/**/*"

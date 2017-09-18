@@ -59,7 +59,7 @@
 	flex(between)
 
 .menu-toggle
-	+above(768px)
+	+above(769px)
 		display: none
 	.icon-el
 		cp()
@@ -67,7 +67,6 @@
 		fill white
 
 .header-nav__el
-
 	+below(768px)
 		width: 100%
 		text-align: center
@@ -87,7 +86,7 @@
 
 
 
-.header-nav
+.header-navs
 	+below(768px)
 		position: absolute
 		top: 120%
@@ -95,9 +94,8 @@
 		left: 0
 		fw()
 		display: none
-	+above(768px)
+	+above(769px)
 		display: flex !important
-
 	width: 475px
 	justify-content:space-between
 	a
@@ -122,6 +120,9 @@
 .header-date
 	+below(768px)
 		margin-right: 0
+		size 300px
+		margin-bottom: 20px
+	+below(640px)
 		size 150px
 	flex(mid)
 	fl()
@@ -134,6 +135,8 @@
 
 .header-date-num
 	+below(768px)
+		font-size: 100px
+	+below(640px)
 		font-size: 60px
 	color #df6976
 	font-size 190px
